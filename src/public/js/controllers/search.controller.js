@@ -34,6 +34,12 @@ angular.module('foodApp').controller('SearchController', function($scope, DataSe
     localStorage.setItem("favs", JSON.stringify($scope.favorites));
   }
 
+  $scope.clearInput = function(){
+    if($scope.query.name != ''){
+      $scope.query.name = '';
+    }
+  }
+
   
 
 });
