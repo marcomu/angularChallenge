@@ -19,7 +19,7 @@
         </thead>
         <tbody>
           <tr ng-repeat="item in foodList | filter: query">
-            <td><a href="" ng-init="item.favorite = !item.favorite" ng-click="addFavorite(item, item.favorite)">+</a></td>
+            <td><input type="checkbox" ng-model="item.favorite" ng-init="item.favorite = false" ng-click="addFavorite(item,item.favorite)" ></td>
             <td>{{item.id}}</td>
             <td><a ui-sref="item({id: item.id})" title="View report">{{item.name}}</a></td>
           </tr>
