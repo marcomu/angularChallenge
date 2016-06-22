@@ -1,5 +1,5 @@
 'use strict';
 
-angular.module('foodApp').controller('HomeController', function($scope){
-  $scope.saludo = 'Food';
+angular.module('foodApp').controller('HomeController', function($scope, DataService){
+
 });

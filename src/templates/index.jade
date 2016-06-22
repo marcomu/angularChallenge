@@ -9,8 +9,13 @@ html(lang="en" ng-app="foodApp")
     title Food App
     link(rel="stylesheet", href="static/css/app.min.css")
   body
-    h1 Food App
-
+    ol.breadcrumb
+      li
+        a(ui-sref="root") Home
+      li
+        a(ui-sref="search") Search
+      li.active Data
+    
     div(ui-view)
 
 

@@ -10,8 +10,16 @@
       url: "/",
       templateUrl: "./static/partials/home.html"
     })
+    .state('search', {
+      url: "/search",
+      templateUrl: "./static/partials/search.html",
+      controller: 'SearchController'
+    })
+    .state('item', {
+      url: "/item?:id",
+      templateUrl: "./static/partials/item.html",
+      controller: 'ItemController'
+    })
 
-  //
-  $locationProvider.html5Mode(true);
 
 });
