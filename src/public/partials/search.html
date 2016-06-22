@@ -2,7 +2,7 @@
   <div class="col-md-8 col-md-offset-2">
     <div class="form-group">
       <label for=""> Search</label>
-      <input type="text" class="form-control" ng-model="busqueda.name">
+      <input type="text" class="form-control" ng-model="query.name">
     </div>
   </div>
 </div>
@@ -12,12 +12,14 @@
       <table class="table table-striped table-hover">
         <thead>
           <tr>
+            <th>Favorite</th>
             <th>Id</th>
             <th>Name</th>
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="item in foodList | filter: busqueda">
+          <tr ng-repeat="item in foodList | filter: query">
+            <td><a href="" ng-init="item.favorite = !item.favorite" ng-click="addFavorite(item, item.favorite)">+</a></td>
             <td>{{item.id}}</td>
             <td><a ui-sref="item({id: item.id})" title="View report">{{item.name}}</a></td>
           </tr>
@@ -25,6 +27,7 @@
       </table>
     </div>
     <div class="col-md-6">
+      <div ui-view></div>
     </div>
   </div>
 </div>

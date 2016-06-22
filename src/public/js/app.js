@@ -15,6 +15,10 @@
       templateUrl: "./static/partials/search.html",
       controller: 'SearchController'
     })
+    .state('favorites', {
+      url: "/favorites",
+      templateUrl: "./static/partials/favorites.html"
+    })
     .state('item', {
       url: "/item?:id",
       templateUrl: "./static/partials/item.html",

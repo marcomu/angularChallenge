@@ -19,4 +19,5 @@ angular.module('foodApp').service('DataService', function($http, $q){
     });
   };
 
+
 });
