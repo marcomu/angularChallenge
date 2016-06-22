@@ -1,0 +1,4 @@
+*.min.*
+
+bower_components
+node_modules
