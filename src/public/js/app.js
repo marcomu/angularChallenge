@@ -17,7 +17,9 @@
     })
     .state('favorites', {
       url: "/favorites",
-      templateUrl: "./static/partials/favorites.html"
+      templateUrl: "./static/partials/favorites.html",
+      controller: 'FavoritesController'
+
     })
     .state('item', {
       url: "/item?:id",

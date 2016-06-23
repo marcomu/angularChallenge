@@ -3,7 +3,7 @@
     <div class="col-sm-6 col-sm-offset-3 search-container">
       <div class="form-group">
         <label class="search-title"> Food Search </label>
-        <input type="text" class="form-control" ng-model="query.name" ng-init="query.name= '' ">
+        <input type="text" class="form-control" ng-model="query.name" ng-init="query.name= '' " placeholder="search a food">
         <span class="clear-search" ng-click="clearInput()" ng-if="query.name != ''">x</span>
       </div>
     </div>
@@ -16,10 +16,7 @@
       <div class="item-container" >
         <span class="item-id">{{item.id}}</span>
         <a ui-sref="item({id: item.id})" title="View report" class="item-name">{{item.name}}</a>
-        <div class="favorite-check">
-          <input type="checkbox" ng-model="item.favorite" ng-init="item.favorite = false" ng-click="addFavorite(item,item.favorite)" class="check-favorite" id="{{item.id}}" >
-          <label for="{{item.id}}">Favorite</label>
-        </div>
+        <a href="" class="fav" ng-click="addFavorite(item)">Favorite</a>
       </div>
 
     </div>

@@ -1,24 +1,32 @@
-<h4>{{report.food.name}}</h4>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        
+        <strong>Food name</strong><p class="lead">{{report.food.name}}</p>
 
-<table class="table table-hover table-striped">
-  <thead>
-    <tr>
-      <th>Group</th>
-      <th>Nutrient</th>
-      <th>Unit</th>
-      <th>
-        Serving {{report.food.nutrients[0].measures[0].eqv}}g
-      </th>
-      <th>Value per 100g</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="item in report.food.nutrients">
-      <td >{{item.group}}</td>
-      <td>{{item.name}}</td>
-      <td>{{item.unit}}</td>
-      <td>{{item.measures[0].value}}</td>
-      <td>{{item.value}}</td>
-    </tr>
-  </tbody>
-</table>
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr>
+              <th>Group</th>
+              <th>Nutrient</th>
+              <th>Unit</th>
+              <th ng-if="report.food.nutrients[0].measures != ''">
+                Serving {{report.food.nutrients[0].measures[0].eqv}}g
+              </th>
+              <th>Value per 100g</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="item in report.food.nutrients">
+              <td >{{item.group}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.unit}}</td>
+              <td ng-if="report.food.nutrients[0].measures != ''">{{item.measures[0].value}}</td>
+              <td>{{item.value}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+    </div>
+  </div>
+</div>
