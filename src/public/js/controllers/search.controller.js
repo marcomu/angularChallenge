@@ -15,7 +15,6 @@ angular.module('foodApp').controller('SearchController', function($scope, DataSe
         console.log('Local storage created')
       });
     }
-    console.log($scope.foodList);
   }else{
     console.log('your browser does not support HTML5 local storage')
   }
@@ -23,9 +22,16 @@ angular.module('foodApp').controller('SearchController', function($scope, DataSe
   $scope.addFavorite = function(item){
     var favs = localStorage.getItem('favs');
     favs = JSON.parse(favs);
-    favs[item.offset] = item;
-    localStorage.setItem("favs", JSON.stringify(favs));
-    alert('Favorite!')
+    if(_.isEmpty(favs)){
+      var f = [];
+      f.push(item);
+      localStorage.setItem("favs", JSON.stringify(f));
+      alert('Favorite!');
+    }else{
+      favs[favs.length] = item;
+      localStorage.setItem("favs", JSON.stringify(favs));
+      alert('Favorite!');
+    }
   }
 
 

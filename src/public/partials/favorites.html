@@ -4,7 +4,7 @@
         
         <h3>My Favorites</h3>
 
-        <table class="table table-hover table-striped">
+        <table class="table table-hover table-striped" ng-if="!showTable">
           <thead>
             <tr>
               <th>ID</th>
@@ -15,12 +15,15 @@
           <tbody>
             <tr ng-repeat="fav in favs">
               <td >{{fav.id}}</td>
-              <td>{{fav.name}}</td>
-              <td>{{fav.favorite}}</td>
-              <td><a href="" ng-click="deleteFavorite(fav)">Delete favorite</a></td>
+              <td><a href="" ui-sref="item({id: fav.id})">{{fav.name}}</a></td>
+              <td>Delete favorite</td>
             </tr>
           </tbody>
         </table>
+
+        <div class="alert alert-info" ng-if="showTable">
+          You don't have any favorite yet
+        </div>
 
     </div>
   </div>
